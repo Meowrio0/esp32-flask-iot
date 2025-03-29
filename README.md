@@ -4,17 +4,17 @@
 
 ---
 
-## 🧠 專案亮點
+## 專案亮點
 
-- ✅ 使用 ESP32 + DHT11 進行環境溫濕度量測
-- ✅ WiFi 傳輸資料至 Flask 後端伺服器
-- ✅ 將資料寫入 MySQL 資料庫（透過 SQLAlchemy）
-- ✅ 使用 Highcharts 建立動態圖表介面（自動更新）
-- ✅ 適用於物聯網初學者作為端到端實作練習
+- 使用 ESP32 + DHT11 進行環境溫濕度量測
+- WiFi 傳輸資料至 Flask 後端伺服器
+- 將資料寫入 MySQL 資料庫（透過 SQLAlchemy）
+- 使用 Highcharts 建立動態圖表介面（自動更新）
+- 適用於物聯網初學者作為端到端實作練習
 
 ---
 
-## 🛠️ 使用技術
+## 使用技術
 
 | 技術 | 說明 |
 |------|------|
@@ -29,17 +29,24 @@
 
 ## 📁 專案結構
 esp32_flask_app/
-├── app.py                 # Flask 主後端程式
+├── app.py
+    → Flask 主後端程式
+├── esp32_code.ino
+    → ESP32 程式（Arduino 格式）
+├── requirements.txt
+    → Python 相依套件清單
+├── README.md
+    → 本說明文件
 ├── templates/
-│   └── index.html         # 使用 Highcharts 顯示圖表
-├── esp32_code.ino         # ESP32 程式（Arduino 格式）
-├── requirements.txt       # Python 相依套件清單
-└── README.md              # 本說
+│   └── index.html
+        → 使用 Highcharts 顯示圖表
+└── screenshots/
+    → 成果截圖資料夾
 ---
 
-## 🚀 快速啟動說明
+##  快速啟動說明
 
-### 📌 安裝 Python 環境與相依套件
+###  安裝 Python 環境與相依套件
 
 ```bash
 # 建立並啟動虛擬環境（可選）
