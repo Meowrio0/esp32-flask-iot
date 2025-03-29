@@ -28,7 +28,7 @@
 ---
 
 ## 📁 專案結構
-esp32_flask_app/
+esp32_flask_app/  
 ├── app.py             → Flask 主後端程式  
 ├── esp32_code.ino     → ESP32 程式（Arduino 格式）  
 ├── requirements.txt   → Python 相依套件清單  
