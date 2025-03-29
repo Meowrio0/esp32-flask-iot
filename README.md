@@ -28,6 +28,7 @@
 ---
 
 ## 📁 專案結構
+<<<<<<< HEAD
 esp32_flask_app/  
 ├── app.py            → Flask 主後端程式  
 ├── esp32_code.ino    → ESP32 程式（Arduino 格式）  
@@ -36,6 +37,18 @@ esp32_flask_app/
 ├── templates/  
 │   └── index.html    → 使用 Highcharts 顯示圖表  
 └── screenshots/      → 成果截圖資料夾  
+=======
+```text
+esp32_flask_app/
+├── app.py            → Flask 主後端程式
+├── esp32_code.ino    → ESP32 程式（Arduino 格式）
+├── requirements.txt  → Python 相依套件清單
+├── README.md         → 本說明文件
+├── templates/
+│   └── index.html    → 使用 Highcharts 顯示圖表
+└── screenshots/      → 成果截圖資料夾
+```
+>>>>>>> 7c94984 (暫存修改，準備 pull 與 rebase)
 ---
 
 ##  快速啟動說明
