@@ -34,7 +34,7 @@ esp32_flask_app/
 ├── requirements.txt   → Python 相依套件清單  
 ├── README.md          → 本說明文件  
 ├── templates/  
-│   └── index.html     → 使用 Highcharts 顯示圖表  
+│           └── index.html     → 使用 Highcharts 顯示圖表  
 └── screenshots/       → 成果截圖資料夾  
 ---
 
