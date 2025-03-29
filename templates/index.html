@@ -1,0 +1,52 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOT Sensor Data</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <h2>IoT Sensor Data</h2>
+    <div id="sensorChart" style="width:100%; height:500px;"></div>
+
+    <script>
+        let chart = Highcharts.chart('sensorChart', {
+            chart: { type: 'line' },
+            title: { text: '溫度與濕度變化圖' },
+            xAxis: { type: 'datetime', title: { text: '時間' } },
+            yAxis: { title: { text: '數值' } },
+            series: [
+                { name: '溫度 (°C)', data: [], color: '#007bff', marker: { enabled: true, symbol: 'circle' } },
+                { name: '濕度 (%)', data: [], color: '#800080', marker: { enabled: true, symbol: 'circle' } }
+            ]
+        });
+
+        function updateData() {
+            fetch("/data")  // ← Flask 路由，不再是 getData.php
+            .then(response => response.json())
+            .then(data => {
+                let tempData = [];
+                let humidData = [];
+
+                data.forEach(entry => {
+                    let time = new Date(entry.time).getTime();
+                    let color = (entry.status === "green") ? "green" : "red";
+
+                    tempData.push({ x: time, y: parseFloat(entry.temp), color: color });
+                    humidData.push({ x: time, y: parseFloat(entry.humid) });
+                });
+
+                chart.series[0].setData(tempData);
+                chart.series[1].setData(humidData);
+            })
+            .catch(error => console.log("Error fetching data: " + error));
+        }
+
+        // 初始呼叫一次，之後每 2 秒更新
+        setInterval(updateData, 2000);
+        updateData();
+    </script>
+</body>
+</html>
