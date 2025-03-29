@@ -1,0 +1,13 @@
+# Python venv 與快取
+VENV/
+__pycache__/
+*.pyc
+
+# macOS 系統檔
+.DS_Store
+
+# Flask 設定檔（如有）
+.env
+
+# Log 檔（如有）
+*.log
